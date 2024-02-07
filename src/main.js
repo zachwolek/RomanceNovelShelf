@@ -8,7 +8,7 @@ var savedCovers = [
 var currentCover;
 
 // Add your event listeners here 👇
-
+addEventListener()
 
 // Create your event handlers and other functions here 👇
 
