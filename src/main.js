@@ -1,10 +1,9 @@
 // Create variables targetting the relevant DOM elements here 👇
-var showRandomButton = document.querySelector(".random-cover-button");
+var controlSection = document.querySelector(".controls");
 var coverImage = document.querySelector(".cover-image");
 var coverTitle = document.querySelector(".cover-title")
 var tag1 = document.querySelector(".tagline-1")
 var tag2 = document.querySelector(".tagline-2")
-
 
 // We've provided a few variables below
 var savedCovers = [
@@ -13,7 +12,8 @@ var savedCovers = [
 var currentCover = showRandomCover();
 
 // Add your event listeners here 👇
-
+controlSection.addEventListener('click', function(){ 
+    showRandomCover() });
 
 // Create your event handlers and other functions here 👇
 
@@ -52,4 +52,3 @@ function showRandomCover(){
 
   return currentCover;
 }
-
