@@ -47,6 +47,7 @@ function clickMakeNewButton(){
   viewSavedSection.classList.add('hidden');
   savedCoverSection.classList.add('hidden');
 }
+
 //This initiates when "View Saved Covers Button" is clicked
 function clickViewSavedButton(){
   randomCoverButton.classList.add('hidden');
