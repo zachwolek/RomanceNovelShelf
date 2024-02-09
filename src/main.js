@@ -1,10 +1,11 @@
 // Create variables targetting the relevant DOM elements here 👇
-//sections
+//sections  
 var controlSection = document.querySelector(".controls");
 var mainCoverSection = document.querySelector(".main-cover");
-var makeCoverSection = document.querySelector(".form-view");
+var formViewSection = document.querySelector(".form-view");
 var savedCoverSection = document.querySelector(".saved-covers-section");
 var viewSavedSection = document.querySelector(".saved-view");
+var viewHome = document.querySelector(".home-view")
 //Cover Object
 var coverImage = document.querySelector(".cover-image");
 var coverTitle = document.querySelector(".cover-title");
@@ -27,40 +28,50 @@ var currentCover ;
 // Add your event listeners here 👇
 addEventListener('load', showRandomCover);
 
+//We need to add Home button
 randomCoverButton.addEventListener('click', showRandomCover);
+makeNewButton.addEventListener('click', clickMakeNewButton)
+viewSavedButton.addEventListener('click', clickViewSavedButton)
+homeButton.addEventListener('click', clickHomeButton)
 
-makeNewButton.addEventListener('click', function(){
-  togglePage(mainCoverSection, makeCoverSection)
-  toggleButtons(saveCoverButton, randomCoverButton);
-  showHidden(homeButton, viewSavedSection)
-})
-
-saveCoverButton.addEventListener('click', function(){
-  togglePage(mainCoverSection,savedCoverSection);  
-  toggleButtons(saveCoverButton, randomCoverButton);
-  showHidden(homeButton, viewSavedSection)
-})
 
 // Create your event handlers and other functions here 👇
-function togglePage(page1,page2) {
-  page1.classList.toggle('hidden')
-  page2.classList.toggle('hidden')
-
+//This initiates when "Make Your Own Cover" button is clicked
+function clickMakeNewButton(){
+  randomCoverButton.classList.add('hidden');
+  saveCoverButton.classList.add('hidden');
+  homeButton.classList.remove('hidden');
+  formViewSection.classList.remove('hidden');
+//below ensures the rest are hidden
+  viewHome.classList.add('hidden');
+  viewSavedSection.classList.add('hidden');
+  savedCoverSection.classList.add('hidden');
 }
 
-function toggleButtons(button1,button2){
-button1.classList.toggle("hidden")
-button2.classList.toggle("hidden")
+//This initiates when "View Saved Covers Button" is clicked
+function clickViewSavedButton(){
+  randomCoverButton.classList.add('hidden');
+  saveCoverButton.classList.add('hidden');
+  homeButton.classList.remove('hidden');
+  savedCoverSection.classList.remove('hidden');
+  //below ensures the rest are hidden
+  viewHome.classList.add('hidden');
+  formViewSection.classList.add('hidden');
+  viewSavedSection.classList.add('hidden');
+}
+//This initiates when "Home Button" is clicked
+function clickHomeButton(){
+  randomCoverButton.classList.remove('hidden');
+  saveCoverButton.classList.remove('hidden');
+  homeButton.classList.add('hidden');
+  viewHome.classList.remove('hidden');
+  //below ensures the rest are hidden
+  formViewSection.classList.add('hidden');
+  savedCoverSection.classList.add('hidden');
+  viewSavedSection.classList.add('hidden');
 }
 
-function showHidden(viewSavedSection, homeButton){
-  if (homeButton.classList.contains("hidden")){
-    homeButton.classList.remove("hidden")
-    if (viewSavedSection.classList.contains("hidden")) {
-      viewSavedSection.classList.remove("hidden")  
-    }
-  }
-}
+
 
 
 // We've provided two functions to get you started
