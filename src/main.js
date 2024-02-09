@@ -1,14 +1,15 @@
 // Create variables targetting the relevant DOM elements here 👇
 //sections
 var controlSection = document.querySelector(".controls");
-var mainCoverSection = document.querySelector(".main-cover")
-var savedCoverSection = document.querySelector(".saved-covers-section")
-var viewSavedSection = document.querySelector(".saved-view")
+var mainCoverSection = document.querySelector(".main-cover");
+var makeCoverSection = document.querySelector(".form-view");
+var savedCoverSection = document.querySelector(".saved-covers-section");
+var viewSavedSection = document.querySelector(".saved-view");
 //Cover Object
 var coverImage = document.querySelector(".cover-image");
-var coverTitle = document.querySelector(".cover-title")
-var tag1 = document.querySelector(".tagline-1")
-var tag2 = document.querySelector(".tagline-2")
+var coverTitle = document.querySelector(".cover-title");
+var tag1 = document.querySelector(".tagline-1");
+var tag2 = document.querySelector(".tagline-2");
 //Buttons
 var homeButton = document.querySelector(".home-button")
 var randomCoverButton = document.querySelector(".random-cover-button")
@@ -28,10 +29,16 @@ addEventListener('load', showRandomCover);
 
 randomCoverButton.addEventListener('click', showRandomCover);
 
+makeNewButton.addEventListener('click', function(){
+  togglePage(mainCoverSection, makeCoverSection)
+  toggleButtons(saveCoverButton, randomCoverButton);
+  showHidden(homeButton, viewSavedSection)
+})
+
 saveCoverButton.addEventListener('click', function(){
   togglePage(mainCoverSection,savedCoverSection);  
   toggleButtons(saveCoverButton, randomCoverButton);
-  showHidden(viewSaved, homeButton)
+  showHidden(homeButton, viewSavedSection)
 })
 
 // Create your event handlers and other functions here 👇
@@ -46,11 +53,11 @@ button1.classList.toggle("hidden")
 button2.classList.toggle("hidden")
 }
 
-function showHidden(homeButton, viewSaved){
+function showHidden(viewSavedSection, homeButton){
   if (homeButton.classList.contains("hidden")){
     homeButton.classList.remove("hidden")
-    if (viewSaved.classList.contains("hidden")) {
-      viewSaved.classList.remove("hidden")  
+    if (viewSavedSection.classList.contains("hidden")) {
+      viewSavedSection.classList.remove("hidden")  
     }
   }
 }
@@ -90,4 +97,3 @@ function showRandomCover(){
 
   return currentCover;
 }
-
