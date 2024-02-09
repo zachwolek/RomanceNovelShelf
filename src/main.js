@@ -9,14 +9,12 @@ var coverImage = document.querySelector(".cover-image");
 var coverTitle = document.querySelector(".cover-title")
 var tag1 = document.querySelector(".tagline-1")
 var tag2 = document.querySelector(".tagline-2")
-//Button
+//Buttons
 var homeButton = document.querySelector(".home-button")
 var randomCoverButton = document.querySelector(".random-cover-button")
 var saveCoverButton = document.querySelector(".save-cover-button")
 var viewSavedButton = document.querySelector(".view-saved-button")
-var makeNewCButton = document.querySelector(".make-new-button")
-
-
+var makeNewButton = document.querySelector(".make-new-button")
 
 
 // We've provided a few variables below
@@ -28,8 +26,7 @@ var currentCover ;
 // Add your event listeners here 👇
 addEventListener('load', showRandomCover);
 
-randomCoverButton.addEventListener('click', function(){ 
-    showRandomCover() });
+randomCoverButton.addEventListener('click', showRandomCover);
 
 saveCoverButton.addEventListener('click', function(){
   togglePage(mainCoverSection,savedCoverSection);  
@@ -93,12 +90,4 @@ function showRandomCover(){
 
   return currentCover;
 }
-
-
-
-
-
-
-
-
 
