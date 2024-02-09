@@ -1,10 +1,11 @@
 // Create variables targetting the relevant DOM elements here 👇
-//sections
+//sections  
 var controlSection = document.querySelector(".controls");
 var mainCoverSection = document.querySelector(".main-cover");
-var makeCoverSection = document.querySelector(".form-view");
+var formViewSection = document.querySelector(".form-view");
 var savedCoverSection = document.querySelector(".saved-covers-section");
 var viewSavedSection = document.querySelector(".saved-view");
+var viewHome = document.querySelector(".home-view")
 //Cover Object
 var coverImage = document.querySelector(".cover-image");
 var coverTitle = document.querySelector(".cover-title");
@@ -27,39 +28,27 @@ var currentCover ;
 // Add your event listeners here 👇
 addEventListener('load', showRandomCover);
 
+//We need to add Home button
 randomCoverButton.addEventListener('click', showRandomCover);
+makeNewButton.addEventListener('click', clickMakeNewButton)
+viewSavedButton.addEventListener('click', clickViewSavedButton)
 
-makeNewButton.addEventListener('click', function(){
-  togglePage(mainCoverSection, makeCoverSection)
-  toggleButtons(saveCoverButton, randomCoverButton);
-  showHidden(homeButton, viewSavedSection)
-})
-
-saveCoverButton.addEventListener('click', function(){
-  togglePage(mainCoverSection,savedCoverSection);  
-  toggleButtons(saveCoverButton, randomCoverButton);
-  showHidden(homeButton, viewSavedSection)
-})
 
 // Create your event handlers and other functions here 👇
-function togglePage(page1,page2) {
-  page1.classList.toggle('hidden')
-  page2.classList.toggle('hidden')
-
+function clickMakeNewButton(){
+  randomCoverButton.classList.add('hidden');
+  saveCoverButton.classList.add('hidden');
+  homeButton.classList.remove('hidden');
+  viewHome.classList.add('hidden');
+  formViewSection.classList.remove('hidden');
 }
 
-function toggleButtons(button1,button2){
-button1.classList.toggle("hidden")
-button2.classList.toggle("hidden")
-}
-
-function showHidden(viewSavedSection, homeButton){
-  if (homeButton.classList.contains("hidden")){
-    homeButton.classList.remove("hidden")
-    if (viewSavedSection.classList.contains("hidden")) {
-      viewSavedSection.classList.remove("hidden")  
-    }
-  }
+function clickViewSavedButton(){
+  randomCoverButton.classList.add('hidden');
+  saveCoverButton.classList.add('hidden');
+  homeButton.classList.remove('hidden');
+  viewHome.classList.add('hidden');
+  savedCoverSection.classList.remove('hidden');
 }
 
 
@@ -97,3 +86,10 @@ function showRandomCover(){
 
   return currentCover;
 }
+
+
+
+// MakeNewOld:
+  // togglePage(mainCoverSection, makeCoverSection)
+  // toggleButtons(saveCoverButton, randomCoverButton);
+  // showHidden(homeButton, viewSavedSection)
