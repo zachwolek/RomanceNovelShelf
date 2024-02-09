@@ -1,6 +1,6 @@
 // Create variables targetting the relevant DOM elements here 👇
 //sections  
-var controlSection = document.querySelector(".controls");
+var controlSection = document.querySelector(".controls"); // I think we can delete this
 var mainCoverSection = document.querySelector(".main-cover");
 var formViewSection = document.querySelector(".form-view");
 var savedCoverSection = document.querySelector(".saved-covers-section");
