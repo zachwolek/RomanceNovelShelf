@@ -97,36 +97,3 @@ function showRandomCover(){
 
   return currentCover;
 }
-
-// makeNewButton.classList.toggle(
-  //Function: 
-  // addEventListener("click", function() {}))
-
-  //Form should be visible
-  
-  //Hidden:
-  // “Show New Random Cover”
-  // var randomCoverButton = document.querySelector(".random-cover-button")
-
-  // “Save Cover
-  // var saveCoverButton = document.querySelector(".save-cover-button")
-
-  //Form should be visible
-
-  // Visible:
-  // “Home”
-  // var homeButton = document.querySelector(".home-button")
-
-
-//   var item = document.getElementById("toggleItem");
-//   var btn = this;
-// }
-  
-  // // Check the current state and update it
-  // if (item.style.display === "none") {
-  //     item.style.display = "block";
-  //     btn.classList.add("active");
-  // } else {
-  //     item.style.display = "none";
-  //     btn.classList.remove("active");
-  // }
