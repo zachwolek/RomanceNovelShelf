@@ -32,24 +32,45 @@ addEventListener('load', showRandomCover);
 randomCoverButton.addEventListener('click', showRandomCover);
 makeNewButton.addEventListener('click', clickMakeNewButton)
 viewSavedButton.addEventListener('click', clickViewSavedButton)
+homeButton.addEventListener('click', clickHomeButton)
 
 
 // Create your event handlers and other functions here 👇
+//This initiates when "Make Your Own Cover" button is clicked
 function clickMakeNewButton(){
   randomCoverButton.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
   homeButton.classList.remove('hidden');
-  viewHome.classList.add('hidden');
   formViewSection.classList.remove('hidden');
+//below ensures the rest are hidden
+  viewHome.classList.add('hidden');
+  viewSavedSection.classList.add('hidden');
+  savedCoverSection.classList.add('hidden');
 }
-
+//This initiates when "View Saved Covers Button" is clicked
 function clickViewSavedButton(){
   randomCoverButton.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
   homeButton.classList.remove('hidden');
-  viewHome.classList.add('hidden');
   savedCoverSection.classList.remove('hidden');
+  //below ensures the rest are hidden
+  viewHome.classList.add('hidden');
+  formViewSection.classList.add('hidden');
+  viewSavedSection.classList.add('hidden');
 }
+//This initiates when "Home Button" is clicked
+function clickHomeButton(){
+  randomCoverButton.classList.remove('hidden');
+  saveCoverButton.classList.remove('hidden');
+  homeButton.classList.add('hidden');
+  viewHome.classList.remove('hidden');
+  //below ensures the rest are hidden
+  formViewSection.classList.add('hidden');
+  savedCoverSection.classList.add('hidden');
+  viewSavedSection.classList.add('hidden');
+}
+
+
 
 
 // We've provided two functions to get you started
@@ -86,10 +107,3 @@ function showRandomCover(){
 
   return currentCover;
 }
-
-
-
-// MakeNewOld:
-  // togglePage(mainCoverSection, makeCoverSection)
-  // toggleButtons(saveCoverButton, randomCoverButton);
-  // showHidden(homeButton, viewSavedSection)
