@@ -105,3 +105,120 @@ function createUserCover(event){
 
 //Coding Notes: Fixed the issue of the cover object being displayed in the form section. values from the input boxed are being ran and the consoles prove that the values are being recorded. It is just not pushing into the DOM object. 
 
+
+//This initiates when "Make Your Own Cover" button is clicked
+function clickMakeNewButton(){
+  randomCoverButton.classList.add('hidden');
+  saveCoverButton.classList.add('hidden');
+  homeButton.classList.remove('hidden');
+  formViewSection.classList.remove('hidden');
+  //below ensures the rest are hidden
+  mainCoverSection.classList.add('hidden');
+  viewHome.classList.add('hidden')
+  viewSavedSection.classList.add('hidden');
+  savedCoverSection.classList.add('hidden');
+}
+
+//This initiates when "View Saved Covers Button" is clicked
+function clickViewSavedButton(){
+  randomCoverButton.classList.add('hidden');
+  saveCoverButton.classList.add('hidden');
+  homeButton.classList.remove('hidden');
+  savedCoverSection.classList.remove('hidden');
+  //below ensures the rest are hidden
+  mainCoverSection.classList.add('hidden');
+  viewHome.classList.add('hidden')
+  formViewSection.classList.add('hidden');
+  viewSavedSection.classList.add('hidden');
+}
+//This initiates when "Home Button" is clicked
+function clickHomeButton(){
+  randomCoverButton.classList.remove('hidden');
+  saveCoverButton.classList.remove('hidden');
+  homeButton.classList.add('hidden');
+  mainCoverSection.classList.remove('hidden');
+  viewHome.classList.remove('hidden')
+  //below ensures the rest are hidden
+  formViewSection.classList.add('hidden');
+  savedCoverSection.classList.add('hidden');
+  viewSavedSection.classList.add('hidden');
+}
+//<--------------ITERATION 3---------------->
+var savedCovers = [];
+function clickSaveButton (){
+  //Goal: When a user clicks the “View Saved Covers” button, we should see the saved covers section
+  ///This changes the section to SavedCover Section
+  savedCoverSection.classList.remove('hidden');
+  //below ensures the rest are hidden
+  formViewSection.classList.add('hidden');
+  viewHome.classList.add('hidden')
+  viewSavedSection.classList.add('hidden');
+
+  //Goal: When a user clicks the “Save Cover” button, the current cover will be added to the savedCovers array
+//this is the variable being returned from createCustomCover(){
+
+  //Goal: Save a cover exactly nce:
+//if the array savedCovers doesn't include current cover, push saved cover
+if (!savedCovers.includes(currentCover)){
+      savedCovers.push(currentCover)
+ }
+
+ //Goal: All the covers in the savedCovers array should be displayed in the saved covers section
+
+
+};
+//--------------END ITERATION 3---------------->
+
+// We've provided two functions to get you started
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+}
+
+function createCover(imgSrc, title, descriptor1, descriptor2) {
+  var cover = {
+    id: Date.now(),
+    coverImg: imgSrc,
+    title: title,
+    tagline1: descriptor1,
+    tagline2: descriptor2
+  }
+  return cover
+}
+
+
+
+function showRandomCover(){
+  var randomCover = covers[getRandomIndex(covers)];
+  var randomTitle = titles[getRandomIndex(titles)];
+  var randomTagline1 = descriptors[getRandomIndex(descriptors)];
+  var randomTagline2 = descriptors[getRandomIndex(descriptors)];
+  var newCover = createCover(randomCover, randomTitle, randomTagline1,randomTagline2);
+  currentCover = newCover;
+  updateMainCove()    
+  return currentCover;}
+
+function showRandomCover(){
+  var randomCover = covers[getRandomIndex(covers)];
+  var randomTitle = titles[getRandomIndex(titles)];
+  var randomTagline1 = descriptors[getRandomIndex(descriptors)];
+  var randomTagline2 = descriptors[getRandomIndex(descriptors)];
+  var newCover = createCover(randomCover, randomTitle, randomTagline1,randomTagline2);
+  currentCover = newCover;
+  updateMainCove()
+  
+  return currentCover;
+}
+
+
+
+function showRandomCover(){
+  var randomCover = covers[getRandomIndex(covers)];
+  var randomTitle = titles[getRandomIndex(titles)];
+  var randomTagline1 = descriptors[getRandomIndex(descriptors)];
+  var randomTagline2 = descriptors[getRandomIndex(descriptors)];
+  var newCover = createCover(randomCover, randomTitle, randomTagline1,randomTagline2);
+  currentCover = newCover;
+  updateMainCove()
+  
+  return currentCover;
+}
