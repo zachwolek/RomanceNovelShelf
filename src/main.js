@@ -52,6 +52,8 @@ homeButton.addEventListener('click', clickHomeButton)
 createNewCoverButton.addEventListener('click', function(event){
   createCustomCover(event)
 })
+createNewCoverButton.addEventListener('click', createCustomCover);
+saveCoverButton.addEventListerner('click', clickSaveButton);
 
 
 
@@ -68,81 +70,13 @@ function updateMainCover(){
   tag1.innerText = currentCover.tagline1;
   tag2.innerText = currentCover.tagline2;
 }
-//This initiates when "Make Your Own Cover" button is clicked
-function clickMakeNewButton(){
-  randomCoverButton.classList.add('hidden');
-  saveCoverButton.classList.add('hidden');
-  homeButton.classList.remove('hidden');
-  formViewSection.classList.remove('hidden');
-  //below ensures the rest are hidden
-  mainCoverSection.classList.add('hidden');
-  viewHome.classList.add('hidden')
-  viewSavedSection.classList.add('hidden');
-  savedCoverSection.classList.add('hidden');
-}
-
-//This initiates when "View Saved Covers Button" is clicked
-function clickViewSavedButton(){
-  randomCoverButton.classList.add('hidden');
-  saveCoverButton.classList.add('hidden');
-  homeButton.classList.remove('hidden');
-  savedCoverSection.classList.remove('hidden');
-  //below ensures the rest are hidden
-  mainCoverSection.classList.add('hidden');
-  viewHome.classList.add('hidden')
-  formViewSection.classList.add('hidden');
-  viewSavedSection.classList.add('hidden');
-}
-//This initiates when "Home Button" is clicked
-function clickHomeButton(){
-  randomCoverButton.classList.remove('hidden');
-  saveCoverButton.classList.remove('hidden');
-  homeButton.classList.add('hidden');
-  mainCoverSection.classList.remove('hidden');
-  viewHome.classList.remove('hidden')
-  //below ensures the rest are hidden
-  formViewSection.classList.add('hidden');
-  savedCoverSection.classList.add('hidden');
-  viewSavedSection.classList.add('hidden');
-}
-
-
-
-
-// We've provided two functions to get you started
-function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
-}
-
-function createCover(imgSrc, title, descriptor1, descriptor2) {
-  var cover = {
-    id: Date.now(),
-    coverImg: imgSrc,
-    title: title,
-    tagline1: descriptor1,
-    tagline2: descriptor2
-  }
-  return cover
-}
-
-
-function showRandomCover(){
-  var randomCover = covers[getRandomIndex(covers)];
-  var randomTitle = titles[getRandomIndex(titles)];
-  var randomTagline1 = descriptors[getRandomIndex(descriptors)];
-  var randomTagline2 = descriptors[getRandomIndex(descriptors)];
-  var newCover = createCover(randomCover, randomTitle, randomTagline1,randomTagline2);
-  currentCover = newCover;
-  
-  
-  return currentCover;
-}
 
 // for this function i need to create a cover that is custom. the parts of the cover come from the input fields on the form view of the webpage. 
 // i need to make DOM variable for the input fields and the button  to create the new cover 
 // create a variable for custom cover that envokes createCover
 //current cover is assigned to the customCover
 //replicate code from show random cover
+
 function createUserCover(event){
   var userCover = document.getElementById("cover").value
   var userTitle = document.getElementById("title").value
@@ -170,3 +104,4 @@ function createUserCover(event){
 
 
 //Coding Notes: Fixed the issue of the cover object being displayed in the form section. values from the input boxed are being ran and the consoles prove that the values are being recorded. It is just not pushing into the DOM object. 
+
