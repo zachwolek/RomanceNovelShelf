@@ -49,10 +49,7 @@ randomCoverButton.addEventListener('click', showRandomCover);
 makeNewButton.addEventListener('click', clickMakeNewButton)
 viewSavedButton.addEventListener('click', clickViewSavedButton)
 homeButton.addEventListener('click', clickHomeButton)
-createNewCoverButton.addEventListener('click', function(event){
-  createCustomCover(event)
-})
-createNewCoverButton.addEventListener('click', createCustomCover);
+createNewCoverButton.addEventListener('click', createUserCover);
 saveCoverButton.addEventListerner('click', clickSaveButton);
 
 
@@ -65,10 +62,7 @@ saveCoverButton.addEventListerner('click', clickSaveButton);
 
 // Create your event handlers and other functions here 👇
 function updateMainCover(){
-  coverImage.src = currentCover.coverImg;
-  coverTitle.innerText = currentCover.title;
-  tag1.innerText = currentCover.tagline1;
-  tag2.innerText = currentCover.tagline2;
+ 
 }
 
 // for this function i need to create a cover that is custom. the parts of the cover come from the input fields on the form view of the webpage. 
@@ -86,10 +80,12 @@ function createUserCover(event){
   var customCover = createCover(userCover,userTitle, userDescriptor1, userDescriptor2)
   //assign current to custom
   currentCover = customCover
-  //to view the current poster 
- updateMainCover();
- event.preventDefault()
- clickHomeButton()
+  coverImage.src = currentCover.coverImg;
+  coverTitle.innerText = currentCover.title;
+  tag1.innerText = currentCover.tagline1;
+  tag2.innerText = currentCover.tagline2;
+  event.preventDefault()
+  clickHomeButton()
   // to prevent random poster
   
   covers.push(userCover)  
@@ -194,31 +190,9 @@ function showRandomCover(){
   var randomTagline2 = descriptors[getRandomIndex(descriptors)];
   var newCover = createCover(randomCover, randomTitle, randomTagline1,randomTagline2);
   currentCover = newCover;
-  updateMainCove()    
+  coverImage.src = currentCover.coverImg;
+  coverTitle.innerText = currentCover.title;
+  tag1.innerText = currentCover.tagline1;
+  tag2.innerText = currentCover.tagline2;
   return currentCover;}
 
-function showRandomCover(){
-  var randomCover = covers[getRandomIndex(covers)];
-  var randomTitle = titles[getRandomIndex(titles)];
-  var randomTagline1 = descriptors[getRandomIndex(descriptors)];
-  var randomTagline2 = descriptors[getRandomIndex(descriptors)];
-  var newCover = createCover(randomCover, randomTitle, randomTagline1,randomTagline2);
-  currentCover = newCover;
-  updateMainCove()
-  
-  return currentCover;
-}
-
-
-
-function showRandomCover(){
-  var randomCover = covers[getRandomIndex(covers)];
-  var randomTitle = titles[getRandomIndex(titles)];
-  var randomTagline1 = descriptors[getRandomIndex(descriptors)];
-  var randomTagline2 = descriptors[getRandomIndex(descriptors)];
-  var newCover = createCover(randomCover, randomTitle, randomTagline1,randomTagline2);
-  currentCover = newCover;
-  updateMainCove()
-  
-  return currentCover;
-}
