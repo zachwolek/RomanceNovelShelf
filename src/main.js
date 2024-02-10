@@ -1,6 +1,6 @@
 // Create variables targetting the relevant DOM elements here 👇
 //sections  
-var controlSection = document.querySelector(".controls");
+//var controlSection = document.querySelector(".controls");
 var mainCoverSection = document.querySelector(".main-cover");
 var formViewSection = document.querySelector(".form-view");
 var savedCoverSection = document.querySelector(".saved-covers-section");
@@ -16,7 +16,17 @@ var homeButton = document.querySelector(".home-button")
 var randomCoverButton = document.querySelector(".random-cover-button")
 var saveCoverButton = document.querySelector(".save-cover-button")
 var viewSavedButton = document.querySelector(".view-saved-button")
-var makeNewButton = document.querySelector(".make-new-button")
+var makeNewButton = document.querySelector(".make-new-button");
+var createNewCoverButton = document.querySelector(".create-new-book-button")
+//form Sections
+
+
+
+
+
+
+
+
 
 
 // We've provided a few variables below
@@ -25,14 +35,28 @@ var savedCovers = [
 ];
 var currentCover ;
 
+
+
+
+
+
+
+
+
 // Add your event listeners here 👇
 addEventListener('load', showRandomCover);
-
-//We need to add Home button
 randomCoverButton.addEventListener('click', showRandomCover);
 makeNewButton.addEventListener('click', clickMakeNewButton)
 viewSavedButton.addEventListener('click', clickViewSavedButton)
 homeButton.addEventListener('click', clickHomeButton)
+createNewCoverButton.addEventListener('click', createNewCover)
+
+
+
+
+
+
+
 
 
 // Create your event handlers and other functions here 👇
@@ -42,8 +66,9 @@ function clickMakeNewButton(){
   saveCoverButton.classList.add('hidden');
   homeButton.classList.remove('hidden');
   formViewSection.classList.remove('hidden');
-//below ensures the rest are hidden
-  viewHome.classList.add('hidden');
+  //below ensures the rest are hidden
+  mainCoverSection.classList.add('hidden');
+  viewHome.classList.add('hidden')
   viewSavedSection.classList.add('hidden');
   savedCoverSection.classList.add('hidden');
 }
@@ -55,7 +80,8 @@ function clickViewSavedButton(){
   homeButton.classList.remove('hidden');
   savedCoverSection.classList.remove('hidden');
   //below ensures the rest are hidden
-  viewHome.classList.add('hidden');
+  mainCoverSection.classList.add('hidden');
+  viewHome.classList.add('hidden')
   formViewSection.classList.add('hidden');
   viewSavedSection.classList.add('hidden');
 }
@@ -64,7 +90,8 @@ function clickHomeButton(){
   randomCoverButton.classList.remove('hidden');
   saveCoverButton.classList.remove('hidden');
   homeButton.classList.add('hidden');
-  viewHome.classList.remove('hidden');
+  mainCoverSection.classList.remove('hidden');
+  viewHome.classList.remove('hidden')
   //below ensures the rest are hidden
   formViewSection.classList.add('hidden');
   savedCoverSection.classList.add('hidden');
@@ -105,6 +132,44 @@ function showRandomCover(){
   coverTitle.innerText = currentCover.title;
   tag1.innerText = currentCover.tagline1;
   tag2.innerText = currentCover.tagline2;
-
+  
   return currentCover;
 }
+// for this function i need to create a cover that is custom. the parts of the cover come from the input fields on the form view of the webpage. 
+// i need to make DOM variable for the input fields and the button  to create the new cover 
+// create a variable for custom cover that envokes createCover
+//current cover is assigned to the customCover
+//replicate code from show random cover
+var userCover = document.getElementById("cover").value
+var userTitle = document.getElementById("title").value
+var userDescriptor1 = document.getElementById("descriptor1").value
+var userDesciptor2 = document.getElementById("descriptor2").value
+function createNewCover(){
+  //create custom cover variale
+  var customCover = createCover(userCover,userTitle, userDescriptor1, userDesciptor2)
+  //assign current to custom
+  currentCover = customCover
+  //to view the current poster 
+  mainCoverSection.classList.remove("hidden")
+  //formViewSection.classList.add("hidden")
+  // to prevent random poster
+  event.preventDefault()
+  // replication from previous code that gets the switches data on the DOM
+  coverImage.src = currentCover.userCover;
+  coverTitle.innerText = currentCover.userTitle;
+  tag1.innerText = currentCover.userDescriptor1;
+  tag2.innerText = currentCover.userDesciptor2
+  
+  //consoles to see what is happening in the code 
+  console.log("custom",customCover)
+  console.log("current",currentCover)
+  
+  console.log(userCover)
+  console.log(userTitle)
+  console.log(userDescriptor1)
+  console.log(userDesciptor2)
+  return currentCover
+  }
+
+  console.log(currentCover)
+  //Coding Notes: Fixed the issue of the cover object being displayed in the form section. values from the input boxed are being ran and the consoles prove that the values are being recorded. It is just not pushing into the DOM object. 
