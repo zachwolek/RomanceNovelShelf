@@ -231,6 +231,27 @@ function showRandomCover(){
   coverTitle.innerText = currentCover.title;
   tag1.innerText = currentCover.tagline1;
   tag2.innerText = currentCover.tagline2;
+  viewHome.classList.remove('hidden')
+  //below ensures the rest are hidden
+  formViewSection.classList.add('hidden');
+  savedCoverSection.classList.add('hidden');
+  viewSavedSection.classList.add('hidden');
   return currentCover;}
 
-
+  viewSavedSection.addEventListener('dblclick', removeCover)
+function removeCover(){
+for (var i = 0; i < savedCovers.length; i++){
+  //if double click is on an saved poster
+  // save the ID of the saved poster
+  //below copies the ID of the event that was targeted 
+  if (savedCovers[i].id === true){
+    
+  }
+  deletedID = copyId(element)
+  savedCovers[i].id
+  //below turns the id into the element of the array
+  var indexRemoved = savedCovers.indexOf(deletedID);
+  savedCovers.splice(indexRemoved, 1, 0)
+  //
+}
+}
