@@ -50,7 +50,7 @@ makeNewButton.addEventListener('click', clickMakeNewButton)
 viewSavedButton.addEventListener('click', clickViewSavedButton)
 homeButton.addEventListener('click', clickHomeButton)
 createNewCoverButton.addEventListener('click', createUserCover);
-saveCoverButton.addEventListerner('click', clickSaveButton);
+saveCoverButton.addEventListener('click', saveCover);
 
 
 
@@ -121,11 +121,11 @@ function clickViewSavedButton(){
   saveCoverButton.classList.add('hidden');
   homeButton.classList.remove('hidden');
   savedCoverSection.classList.remove('hidden');
+  viewSavedSection.classList.remove('hidden');
   //below ensures the rest are hidden
   mainCoverSection.classList.add('hidden');
   viewHome.classList.add('hidden')
   formViewSection.classList.add('hidden');
-  viewSavedSection.classList.add('hidden');
 }
 //This initiates when "Home Button" is clicked
 function clickHomeButton(){
@@ -140,27 +140,61 @@ function clickHomeButton(){
   viewSavedSection.classList.add('hidden');
 }
 //<--------------ITERATION 3---------------->
-var savedCovers = [];
-function clickSaveButton (){
-  //Goal: When a user clicks the “View Saved Covers” button, we should see the saved covers section
-  ///This changes the section to SavedCover Section
+// var savedCovers = [];
+// function clickSaveButton (){
+//   //Goal: When a user clicks the “View Saved Covers” button, we should see the saved covers section
+//   ///This changes the section to SavedCover Section
+//   savedCoverSection.classList.remove('hidden');
+//   //below ensures the rest are hidden
+//   formViewSection.classList.add('hidden');
+//   viewHome.classList.add('hidden')
+//   viewSavedSection.classList.add('hidden');
+
+//   //Goal: When a user clicks the “Save Cover” button, the current cover will be added to the savedCovers array
+// //this is the variable being returned from createCustomCover(){
+
+//   //Goal: Save a cover exactly nce:
+// //if the array savedCovers doesn't include current cover, push saved cover
+// if (!savedCovers.includes(currentCover)){
+//       savedCovers.push(currentCover)
+//  }
+
+//  //Goal: All the covers in the savedCovers array should be displayed in the saved covers section
+
+
+// };
+
+function clickSaveButton(){
+saveCover()
+displaySavedCovers()
+}
+
+
+function displaySavedCovers(){
+  savedCoverSection.innerHTML = '';
+  for (var i = 0; i < savedCovers.length; i++){
+    currentCover = savedCovers[i];
+    savedCoverSection.insertAdjacentHTML("afterbegin", 
+      `<div class="mini-cover" id="${currentCover.id}">
+      <img class="cover-image" src="${currentCover.coverImg}">
+      <h2 class="cover-title">${currentCover.title}</h2>
+      <h3 class="tagline">A tale of <span class="tagline-1">${currentCover.tagline1}n</span> and <span class="tagline-2">${currentCover.tagline2}</span></h3>
+      </div>`
+  )}  
+  covers.push(userCover)  
+  titles.push(userTitle)
+  descriptors.push(userDescriptor1)
+  descriptors.push(userDescriptor2)
+}
+function saveCover (currentCover){
+if (!savedCovers.includes(currentCover)){
+    savedCovers.push(currentCover); 
+  }
+  displaySavedCovers()
   savedCoverSection.classList.remove('hidden');
-  //below ensures the rest are hidden
   formViewSection.classList.add('hidden');
   viewHome.classList.add('hidden')
-  viewSavedSection.classList.add('hidden');
-
-  //Goal: When a user clicks the “Save Cover” button, the current cover will be added to the savedCovers array
-//this is the variable being returned from createCustomCover(){
-
-  //Goal: Save a cover exactly nce:
-//if the array savedCovers doesn't include current cover, push saved cover
-if (!savedCovers.includes(currentCover)){
-      savedCovers.push(currentCover)
- }
-
- //Goal: All the covers in the savedCovers array should be displayed in the saved covers section
-
+  viewSavedSection.classList.remove('hidden');
 
 };
 //--------------END ITERATION 3---------------->
@@ -195,4 +229,5 @@ function showRandomCover(){
   tag1.innerText = currentCover.tagline1;
   tag2.innerText = currentCover.tagline2;
   return currentCover;}
+
 
