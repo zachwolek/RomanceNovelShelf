@@ -174,19 +174,22 @@ function displaySavedCovers(){
   savedCoverSection.innerHTML = '';
   for (var i = 0; i < savedCovers.length; i++){
     currentCover = savedCovers[i];
+    //console.log(currentCover)
+    //console.log(savedCovers)
     savedCoverSection.insertAdjacentHTML("afterbegin", 
       `<div class="mini-cover" id="${currentCover.id}">
       <img class="cover-image" src="${currentCover.coverImg}">
       <h2 class="cover-title">${currentCover.title}</h2>
-      <h3 class="tagline">A tale of <span class="tagline-1">${currentCover.tagline1}n</span> and <span class="tagline-2">${currentCover.tagline2}</span></h3>
+      <h3 class="tagline">A tale of <span class="tagline-1">${currentCover.tagline1}</span> and <span class="tagline-2">${currentCover.tagline2}</span></h3>
       </div>`
-  )}  
-  covers.push(userCover)  
-  titles.push(userTitle)
-  descriptors.push(userDescriptor1)
-  descriptors.push(userDescriptor2)
+  );
+}  
+  // covers.push(userCover)  
+  // titles.push(userTitle)
+  // descriptors.push(userDescriptor1)
+  // descriptors.push(userDescriptor2)
 }
-function saveCover (currentCover){
+function saveCover (){
 if (!savedCovers.includes(currentCover)){
     savedCovers.push(currentCover); 
   }
