@@ -18,7 +18,8 @@ var saveCoverButton = document.querySelector(".save-cover-button")
 var viewSavedButton = document.querySelector(".view-saved-button")
 var makeNewButton = document.querySelector(".make-new-button");
 var createNewCoverButton = document.querySelector(".create-new-book-button")
-//form Sections
+
+document.querySelector("title").textContent ="Romantasy"
 
 
 
@@ -31,7 +32,7 @@ var createNewCoverButton = document.querySelector(".create-new-book-button")
 
 // We've provided a few variables below
 var savedCovers = [
-  createCover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
+  //createCover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
 var currentCover ;
 
@@ -239,19 +240,34 @@ function showRandomCover(){
   return currentCover;}
 
   viewSavedSection.addEventListener('dblclick', removeCover)
-function removeCover(){
-for (var i = 0; i < savedCovers.length; i++){
-  //if double click is on an saved poster
-  // save the ID of the saved poster
-  //below copies the ID of the event that was targeted 
-  if (savedCovers[i].id === true){
+// function removeCover(){
+// for (var i = 0; i < savedCovers.length; i++){
+//   //if double click is on an saved poster
+//   // save the ID of the saved poster
+//   //below copies the ID of the event that was targeted 
+//   if (savedCovers[i].id === true){
     
+//   }
+//   deletedID = copyId(element)
+//   savedCovers[i].id
+//   //below turns the id into the element of the array
+//   var indexRemoved = savedCovers.indexOf(deletedID);
+//   savedCovers.splice(indexRemoved, 1, 0)
+//   //
+// }
+// }
+
+function removeCover(event){
+  var deleteId = event.target
+  savedCovers = deleteId.closest('.mini-cover')
+  if(savedCovers){
+    var id = savedCovers.id;
+    for (let i = 0; i < savedCovers.length; i++) {
+      if (savedCovers[i].id == id);{
+        savedCovers.splice(i,1);
+        break;
+      }
+    }
+    savedCovers.remove()
   }
-  deletedID = copyId(element)
-  savedCovers[i].id
-  //below turns the id into the element of the array
-  var indexRemoved = savedCovers.indexOf(deletedID);
-  savedCovers.splice(indexRemoved, 1, 0)
-  //
-}
 }
