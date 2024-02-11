@@ -11,8 +11,8 @@ var tag2 = document.querySelector(".tagline-2");
 var viewHomeButton = document.querySelector(".home-button")
 var randomCoverButton = document.querySelector(".random-cover-button")
 var saveCoverButton = document.querySelector(".save-cover-button")
-var viewSavedCoverButton = document.querySelector(".view-saved-button")
-var makeNewCoverButton = document.querySelector(".make-new-button");
+var viewSavedButton = document.querySelector(".view-saved-button")
+var makeNewButton = document.querySelector(".make-new-button");
 var createNewCoverButton = document.querySelector(".create-new-book-button")
 document.querySelector("title").textContent ="Romantasy"
 
@@ -26,8 +26,8 @@ var currentCover ;
 // Add your event listeners here 👇
 addEventListener('load', showRandomCover);
 randomCoverButton.addEventListener('click', showRandomCover);
-makeNewCoverButton.addEventListener('click', clickMakeNewButton)
-viewSavedCoverButton.addEventListener('click', clickviewSavedCoverButton)
+makeNewButton.addEventListener('click', clickMakeNewButton)
+viewSavedButton.addEventListener('click', clickViewSavedButton)
 viewHomeButton.addEventListener('click', clickHomeButton)
 createNewCoverButton.addEventListener('click', createUserCover);
 saveCoverButton.addEventListener('click', saveCover);
@@ -39,7 +39,7 @@ viewSavedSection.addEventListener('dblclick', removeCover)
 function clickMakeNewButton(){
   randomCoverButton.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
-  homeButton.classList.remove('hidden');
+  viewHomeButton.classList.remove('hidden');
   formViewSection.classList.remove('hidden');
   //below ensures the rest are hidden
   mainCoverSection.classList.add('hidden');
@@ -48,10 +48,10 @@ function clickMakeNewButton(){
   savedCoverSection.classList.add('hidden');
 }
 //switch to saved
-function clickviewSavedCoverButton(){
+function clickViewSavedButton(){
   randomCoverButton.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
-  homeButton.classList.remove('hidden');
+  viewHomeButton.classList.remove('hidden');
   savedCoverSection.classList.remove('hidden');
   viewSavedSection.classList.remove('hidden');
   //below ensures the rest are hidden
@@ -64,7 +64,7 @@ function clickviewSavedCoverButton(){
 function clickHomeButton(){
   randomCoverButton.classList.remove('hidden');
   saveCoverButton.classList.remove('hidden');
-  homeButton.classList.add('hidden');
+  viewHomeButton.classList.add('hidden');
   mainCoverSection.classList.remove('hidden');
   viewHomeSection.classList.remove('hidden')
   //below ensures the rest are hidden
@@ -101,6 +101,12 @@ function showRandomCover(){
   coverTitle.innerText = currentCover.title;
   tag1.innerText = currentCover.tagline1;
   tag2.innerText = currentCover.tagline2;
+  viewHomeSection.classList.remove('hidden')
+  //below ensures the rest are hidden
+  formViewSection.classList.add('hidden');
+  savedCoverSection.classList.add('hidden');
+  viewSavedSection.classList.add('hidden');
+
   return currentCover;
 }
   
@@ -130,11 +136,10 @@ function createUserCover(event){
 function saveCover (){
   if (!savedCovers.includes(currentCover)){
       savedCovers.push(currentCover); 
-  }
-    
+    }
   displaySavedCovers()
-     
-};
+  
+}
   
 function displaySavedCovers(){
   savedCoverSection.innerHTML = '';
