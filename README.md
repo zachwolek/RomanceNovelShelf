@@ -1,5 +1,9 @@
 ∂# RomCom  
 
+### Live GitHub Site:
+[//]: <> (What site can a person access your live site?)
+https://zachwolek.github.io/RomanceNovelShelf/
+
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 The app solves the problem of creating content for romance novel afficionados. The app can either generate romance novels randomly, or create to exact specifications of the user. These romance novels can get saved to a user bookshelf and deleleted by the user
