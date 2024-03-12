@@ -1,4 +1,4 @@
-# RomCom  
+∂# RomCom  
 
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
@@ -19,7 +19,7 @@ https://i.postimg.cc/Z51GXY4j/MuskBook.png
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
-The project took between Wednesday night and Sunday afternoon. Lydia and Zach are both in week 2 of the first mod. 
+Lydia and Zach are both in their second week of the first academic "module" of four at Turing School of Software & Design. The project was assigned to be completed at the end of the second week and worked on after class and over the weekend.  
 
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
