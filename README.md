@@ -19,7 +19,7 @@ The app solves the problem of creating content for romance novel afficionados. T
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 Easily the coolest piece of functionality is the ability to generate any book limited by your own imagination. Example of dynamic functionality: 
-https://i.postimg.cc/Z51GXY4j/MuskBook.png
+![alt text](assets/ScreenShotExample.png)
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
