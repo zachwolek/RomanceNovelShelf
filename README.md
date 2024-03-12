@@ -1,4 +1,8 @@
-# RomCom  
+∂# RomCom  
+
+### Live GitHub Site:
+[//]: <> (What site can a person access your live site?)
+https://zachwolek.github.io/RomanceNovelShelf/
 
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
@@ -6,10 +10,10 @@ The app solves the problem of creating content for romance novel afficionados. T
 
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
-1) Access the form here: https://github.com/LISims88/Romantasy-
-2) Copy the SSH repository URL git@github.com:LISims88/Romantasy-.git
+1) Access the form here: https://github.com/zachwolek/RomanceNovelShelf
+2) Copy the SSH repository URL git@github.com:zachwolek/RomanceNovelShelf.git
 3) Open terminal and 'cd' into the directory you wish to clone 
-4) Clone the repository by submitting `git clone git@github.com:LISims88/Romantasy-.git`
+4) Clone the repository by submitting `git clone git@github.com:zachwolek/RomanceNovelShelf.git`
 
 
 ### Preview of App:
@@ -19,7 +23,7 @@ https://i.postimg.cc/Z51GXY4j/MuskBook.png
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
-The project took between Wednesday night and Sunday afternoon. Lydia and Zach are both in week 2 of the first mod. 
+Lydia and Zach are both in their second week of the first academic "module" of four at Turing School of Software & Design. The project was assigned to be completed at the end of the second week and worked on after class and over the weekend.  
 
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
