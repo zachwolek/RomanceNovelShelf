@@ -6,10 +6,10 @@ The app solves the problem of creating content for romance novel afficionados. T
 
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
-1) Access the form here: https://github.com/LISims88/Romantasy-
-2) Copy the SSH repository URL git@github.com:LISims88/Romantasy-.git
+1) Access the form here: https://github.com/zachwolek/RomanceNovelShelf
+2) Copy the SSH repository URL git@github.com:zachwolek/RomanceNovelShelf.git
 3) Open terminal and 'cd' into the directory you wish to clone 
-4) Clone the repository by submitting `git clone git@github.com:LISims88/Romantasy-.git`
+4) Clone the repository by submitting `git clone git@github.com:zachwolek/RomanceNovelShelf.git`
 
 
 ### Preview of App:
